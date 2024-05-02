@@ -1,3 +1,12 @@
-preco = float(input('Qual é  preço inicial do produto? R$'))
-novo = preco - (preco * desconto / 100)
-print('O produto que custava R${}, na promoção com desconto de %{} vai custar R${}'.format(preco,novo))
+
+preco_original = float(input("Digite o preço original do item: "))
+
+percentual_desconto = float(input("Digite o percentual de desconto (%): "))
+
+desconto = (percentual_desconto / 100) * preco_original
+
+preco_com_desconto = preco_original - desconto
+
+print("Desconto: R$", desconto)
+print("Preço com desconto: R$", preco_com_desconto)
+
