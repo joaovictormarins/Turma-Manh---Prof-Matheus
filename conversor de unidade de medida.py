@@ -14,7 +14,7 @@ fatores = {
 }
 
 if unidade_origem in fatores:
-    # Imprimir as conversões
+    
     print(f"Conversões de {valor} {unidade_origem}:")
     for unidade_destino, fator in fatores[unidade_origem].items():
         resultado = valor * fator
