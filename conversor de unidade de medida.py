@@ -1,48 +1,24 @@
 
-unidade_origem = input('Escreva a uidade de medida desejada(Milhas,Polegadas,Pes,Centimetros,Metros ou Quilometros:)')
-valor = float(input('Escreva o valor a ser convertido:'))
+# Obtendo entrada do usuário
+valor = float(input("Digite o valor a ser convertido: "))
+unidade_origem = input("Digite a unidade de medida (Milhas, Polegadas, Pés, Centímetros, Metros ou Quilômetros): ").lower()
 
-if unidade_origem == 'Milhas'or'milhas':
-    print('Milhas =',valor)
-    print('Polegadas =', valor*63360)
-    print('Pes =', valor*5280)
-    print('Centimetros =', valor*160934)
-    print('Metros =', valor*160934)
-    print('Quilometros =', valor*1.60934)
-elif unidade_origem == 'Polegadas'or'polegadas':
-    print('Milhas =', valor/63360)
-    print('Polegadas =', valor)
-    print('Pes =', valor/12)
-    print('Centimetros =', valor*2.54)
-    print('Metros =', valor*0.0254)
-    print('Quilometros =', valor*0.0000254)
-elif unidade_origem =='Pes'or'pes':
-    print('Milhas =', valor/5280)
-    print('Polegadas =', valor*12)
-    print('Pes =', valor)
-    print('Centimetros =', valor*30.48)
-    print('metros =', valor*0.3048)
-    print('Quilometros =', valor*0.0000254)
-elif unidade_origem == 'Centimetros'or'centimetros':
-    print('Milhas =', valor/160934)
-    print('Polegadas =', valor/2.54)
-    print('Pes =', valor/30.48)
-    print('Centimetros =', valor)
-    print('Metros =', valor*100)
-    print('Quiometros =', valor/1000)
-elif unidade_origem == 'Metros'or'milhas':
-    print('Milhas =',valor/1609.34)
-    print('Polegadas =', valor/0.0254)
-    print('Pes = ', valor/0.3048)
-    print('Centimetros =', valor*100)
-    print('Metros =', valor)
-    print('Quilometros =', valor*1000)
-elif unidade_origem == 'Quilometros'or'quilometros':
-    print('Milhas =', valor/1.60934)
-    print('Polegadas =', valor/0.0000254)
-    print('Pes =', valor/0.0003048)
-    print('Centimetros =', valor*10000)
-    print('Metros =', valor*1000)
-    print('Quilometros =', valor)
+# Dicionário de fatores de conversão
+fatores = {
+    'milhas': {'polegadas': 63360, 'pés': 5280, 'centímetros': 160934, 'metros': 1609.34, 'quilômetros': 1.60934},
+    'polegadas': {'milhas': 1 / 63360, 'pés': 1 / 12, 'centímetros': 2.54, 'metros': 0.0254, 'quilômetros': 2.54e-5},
+    'pés': {'milhas': 1 / 5280, 'polegadas': 12, 'centímetros': 30.48, 'metros': 0.3048, 'quilômetros': 0.0003048},
+    'centímetros': {'milhas': 6.2137e-6, 'polegadas': 0.393701, 'pés': 0.0328084, 'metros': 0.01, 'quilômetros': 1e-5},
+    'metros': {'milhas': 0.000621371, 'polegadas': 39.3701, 'pés': 3.28084, 'centímetros': 100, 'quilômetros': 0.001},
+    'quilômetros': {'milhas': 0.621371, 'polegadas': 39370.1, 'pés': 3280.84, 'centímetros': 100000, 'metros': 1000}
+}
+
+# Verificar se a unidade de origem é válida
+if unidade_origem in fatores:
+    # Imprimir as conversões
+    print(f"Conversões de {valor} {unidade_origem}:")
+    for unidade_destino, fator in fatores[unidade_origem].items():
+        resultado = valor * fator
+        print(f"{resultado} {unidade_destino}")
 else:
-    print('Unidade de origem não corresponde')
+    print("Unidade de medida inválida.")
