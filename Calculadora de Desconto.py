@@ -1,4 +1,4 @@
-
+#calculadora de desconto
 preco_original = float(input("Digite o preço original do item: "))
 
 percentual_desconto = float(input("Digite o percentual de desconto (%): "))
