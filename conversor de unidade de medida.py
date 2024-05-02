@@ -13,7 +13,6 @@ fatores = {
     'quilômetros': {'milhas': 0.621371, 'polegadas': 39370.1, 'pés': 3280.84, 'centímetros': 100000, 'metros': 1000}
 }
 
-
 if unidade_origem in fatores:
     # Imprimir as conversões
     print(f"Conversões de {valor} {unidade_origem}:")
