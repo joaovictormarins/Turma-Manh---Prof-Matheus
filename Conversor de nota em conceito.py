@@ -12,4 +12,4 @@ elif nota >= 4:
 else:
     conceito = 'F'
 
-print("Conceito correspondente:", conceito)
+print("Conceito correspondente com os critérios estabelecidos:", conceito)
