@@ -1,5 +1,5 @@
 #calculadora de desconto
-preco_original = float(input("Digite o preço original do item: "))
+preco_original = float(input("Digite o preço original do item especificado: "))
 
 percentual_desconto = float(input("Digite o percentual de desconto (%): "))
 
