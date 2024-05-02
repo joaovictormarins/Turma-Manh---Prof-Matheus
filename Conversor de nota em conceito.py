@@ -1,3 +1,4 @@
+#conversor de nota em conceito
 nota = float(input("Digite a nota do aluno: "))
 
 if nota >= 9:
