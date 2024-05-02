@@ -1,9 +1,9 @@
 
-# Obtendo entrada do usuário
+# Conversor de Unidade De Medida
 valor = float(input("Digite o valor a ser convertido: "))
 unidade_origem = input("Digite a unidade de medida (Milhas, Polegadas, Pés, Centímetros, Metros ou Quilômetros): ").lower()
 
-# Dicionário de fatores de conversão
+
 fatores = {
     'milhas': {'polegadas': 63360, 'pés': 5280, 'centímetros': 160934, 'metros': 1609.34, 'quilômetros': 1.60934},
     'polegadas': {'milhas': 1 / 63360, 'pés': 1 / 12, 'centímetros': 2.54, 'metros': 0.0254, 'quilômetros': 2.54e-5},
@@ -13,7 +13,7 @@ fatores = {
     'quilômetros': {'milhas': 0.621371, 'polegadas': 39370.1, 'pés': 3280.84, 'centímetros': 100000, 'metros': 1000}
 }
 
-# Verificar se a unidade de origem é válida
+
 if unidade_origem in fatores:
     # Imprimir as conversões
     print(f"Conversões de {valor} {unidade_origem}:")
