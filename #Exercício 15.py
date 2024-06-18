@@ -27,3 +27,9 @@ talheres.extend(["colher","garfo","faca"])
 
 eletronicos.extend(["computador","tablet","tv","celular","iphone"])
 
+print("lista de comidas:" , comidas)
+print("lista de bebidas:" , bebidas)
+print("lista de talheres:" , talheres)
+print("lista de eletronicos:" , eletronicos)
+      
+
